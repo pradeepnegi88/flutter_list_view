@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View Example"),
         ),
-        body: new ListViewSeparated(),
+        body: new SimpleListView(),
       ),
     );
   }
@@ -81,6 +81,10 @@ class SimpleListView extends StatelessWidget {
         Text("Example 7"),
         Text("Example 8"),
       ],
+      scrollDirection: Axis.vertical, //Axis.horizontal,
+      padding: EdgeInsets.all(12.0), // padding
+      shrinkWrap: true, // if true takes only that much space needed to fit listview
+      primary: true, //scrollable
     );
   }
 }
