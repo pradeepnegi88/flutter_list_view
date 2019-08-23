@@ -17,9 +17,34 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View Example"),
         ),
-        body: new ListViewBuilder(),
+        body: new ListViewSeparated(),
       ),
     );
+  }
+}
+
+class ListViewSeparated extends StatelessWidget {
+  const ListViewSeparated({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+        itemBuilder: (context, position) {
+          return Card(
+            child: Text("Sample Data is $position"),
+          );
+        },
+        separatorBuilder: (context, position) {
+          return Card(
+            child: Text(
+              "Sample Data is $position",
+              style: TextStyle(color: Colors.green),
+            ),
+          );
+        },
+        itemCount: 10);
   }
 }
 
@@ -31,7 +56,9 @@ class ListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder: (context, position) {
-      return Card(child: Text("Sample Data is $position"),);
+      return Card(
+        child: Text("Sample Data is $position"),
+      );
     });
   }
 }
