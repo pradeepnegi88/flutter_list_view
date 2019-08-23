@@ -12,10 +12,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "List View Example",
+      title: "App Bar ",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("List View Example"),
+          title: Text("App Bar"),
+          actions: <Widget>[
+            Icon(Icons.settings)
+          ],
+          backgroundColor: Colors.green,
+          elevation: 12.0,
+          leading: Icon(Icons.menu),
+          bottom: PreferredSize(child: Icon(Icons.directions_walk), preferredSize: Size.fromHeight(12.0)),
+          brightness: Brightness.light,
         ),
         body: new SimpleListView(),
       ),
