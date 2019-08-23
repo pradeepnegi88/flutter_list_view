@@ -17,9 +17,22 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View Example"),
         ),
-        body: new SimpleListView(),
+        body: new ListViewBuilder(),
       ),
     );
+  }
+}
+
+class ListViewBuilder extends StatelessWidget {
+  const ListViewBuilder({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(itemBuilder: (context, position) {
+      return Card(child: Text("Sample Data is $position"),);
+    });
   }
 }
 
