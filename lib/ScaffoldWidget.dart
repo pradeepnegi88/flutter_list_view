@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ListViewBuilder.dart';
 
 class ScaffoldWidget extends StatelessWidget {
   @override
@@ -20,9 +21,18 @@ class ScaffoldWidget extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Icon(Icons.access_alarm), title: Text("Alaram"))
         ]),
-        persistentFooterButtons: <Widget>[
-          Text("Persistence Footer Button")
-        ],
+        persistentFooterButtons: <Widget>[Text("Persistence Footer Button")],
+        drawer: Drawer(
+          child: ListView(
+            children: <Widget>[
+              DrawerHeader(child: Text("Drawer Header"),decoration: BoxDecoration(color: Colors.pinkAccent),),
+              Text("Menu1"),
+              Text("Menu2"),
+              Text("Menu3"),
+            ],
+          ),
+        ),
+        body: ListViewBuilder(),
       ),
     );
   }
