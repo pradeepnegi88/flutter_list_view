@@ -20,6 +20,9 @@ class ScaffoldWidget extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Icon(Icons.access_alarm), title: Text("Alaram"))
         ]),
+        persistentFooterButtons: <Widget>[
+          Text("Persistence Footer Button")
+        ],
       ),
     );
   }
