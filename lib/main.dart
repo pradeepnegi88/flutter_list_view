@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/ScaffoldWidget.dart';
-import 'package:flutter_app/SimpleListView.dart';
 
 void main() {
-  runApp(new ScaffoldWidget());
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,23 +16,19 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("App Bar"),
-          actions: <Widget>[
-            Icon(Icons.settings)
-          ],
+          actions: <Widget>[Icon(Icons.settings)],
           backgroundColor: Colors.green,
           elevation: 12.0,
           leading: Icon(Icons.menu),
-          bottom: PreferredSize(child: Icon(Icons.directions_walk), preferredSize: Size.fromHeight(12.0)),
+          bottom: PreferredSize(
+              child: Icon(Icons.directions_walk),
+              preferredSize: Size.fromHeight(12.0)),
           brightness: Brightness.light,
         ),
-        body: new SimpleListView(),
+        body: Center(
+          child: Image(image: AssetImage("assets/image.jpeg")),
+        ),
       ),
     );
   }
 }
-
-
-
-
-
-
